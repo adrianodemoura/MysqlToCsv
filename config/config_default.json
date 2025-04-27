@@ -1,0 +1,9 @@
+{
+	"mysql_host":"",
+	"mysql_user":"",
+	"mysql_pass":"",
+	"mysql_db":"",
+	"mysql_tabela":"",
+	"records_per_page": 10,
+	"total_records": 100
+}

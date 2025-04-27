@@ -1,0 +1,23 @@
+# Arquivos compilados
+*.o
+*.out
+*.exe
+*.bin
+
+# Arquivos de saída
+files_csv/
+
+# Arquivos de configuração com senhas
+config/config.json
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de IDE
+.vscode/
+.idea/
+
+# Arquivos de build
+bin/
+obj/
