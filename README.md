@@ -86,3 +86,13 @@ Os arquivos CSV serão gerados no diretório `files_csv/`.
 - O programa limita o uso de memória a 70% da RAM disponível
 - Utiliza no máximo 16 threads simultâneas
 - Processa os dados em chunks de 100.000 registros para melhor gerenciamento de memória 
+
+## Glossário
+
+- **Chunks**: São blocos de dados que o programa processa por vez. No contexto deste projeto, um chunk representa um conjunto de 100.000 registros que são lidos do banco de dados e processados em memória antes de serem escritos no arquivo CSV. O uso de chunks ajuda a gerenciar o consumo de memória e permite o processamento paralelo dos dados.
+
+- **Threads**: São unidades de execução que permitem que o programa realize múltiplas tarefas simultaneamente. Neste projeto, as threads são utilizadas para processar diferentes chunks de dados em paralelo, aumentando a performance da exportação.
+
+- **Páginas**: São divisões dos dados exportados em arquivos CSV separados. Cada página contém 1 milhão de registros, facilitando o gerenciamento de arquivos grandes e permitindo o processamento em partes.
+
+- **RAM (Random Access Memory)**: Memória de acesso aleatório, é o tipo de memória que o computador usa para armazenar dados temporariamente enquanto o programa está em execução. O projeto limita o uso de RAM a 70% para evitar sobrecarga do sistema.
