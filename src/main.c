@@ -6,6 +6,7 @@
 #include <json-c/json.h>
 #include <sys/resource.h>
 #include <unistd.h>
+#include <time.h>
 
 #include "mysql_connector.h"
 #include "csv_writer.h"
@@ -59,6 +60,8 @@ void* process_data_thread(void* arg) {
         // Write to CSV
         if (!write_records_to_csv(result, filename)) {
             fprintf(stderr, "Thread %d: Failed to write CSV file\n", data->thread_id);
+        } else {
+            printf("Exportando página: %s\n", filename);
         }
 
         mysql_free_result(result);
@@ -69,6 +72,9 @@ void* process_data_thread(void* arg) {
 }
 
 int main() {
+    // Start timing
+    time_t start_time = time(NULL);
+    
     // Initialize configuration
     Config config;
     if (!load_config(&config)) {
@@ -126,5 +132,11 @@ int main() {
     }
 
     mysql_close(conn);
+    
+    // Calculate and print total time
+    time_t end_time = time(NULL);
+    double total_time = difftime(end_time, start_time);
+    printf("\nExportação concluída em %.2f segundos\n", total_time);
+    
     return 0;
 }
