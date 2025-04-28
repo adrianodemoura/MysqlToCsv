@@ -4,6 +4,12 @@
 	"mysql_pass":"",
 	"mysql_db":"",
 	"mysql_tabela":"",
-	"records_per_page": 10,
-	"total_records": 100
+	"records_per_page": 100,
+	"total_records": 1000,
+	"mongodb_host": "127.0.0.1",
+	"mongodb_port": 27017,
+	"mongodb_database": "",
+	"mongodb_collection": "",
+	"mongodb_username": "",
+	"mongodb_password": ""
 }
